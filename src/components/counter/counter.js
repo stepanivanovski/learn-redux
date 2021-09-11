@@ -1,13 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import * as actions from '../../actions';
 
 import './counter.css'
 import minus from './Minus.png'
 import plus from './Vector.png'
 import reset from './Group.png'
-
 
 const Counter = ({counter, inc, dec, res}) => {
   return (
@@ -41,8 +39,6 @@ function mapStateProps(state) {
   }
 }
 
-function mapDispatchProps(dispatch) {
-  return bindActionCreators(actions, dispatch)
-}
+const mapDispatchProps = actions
 
 export default connect(mapStateProps, mapDispatchProps)(Counter);
